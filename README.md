@@ -1,6 +1,6 @@
 Web Scrapping Assessment
 
-This development automates 24hrs interval scraping of Broadway show data from [IBDB.com](https://www.ibdb.com/shows), deduplicates entries, and logs each run. It uses Selenium + BeautifulSoup and schedules itself to re-run every 24 hours via Python’s `schedule` library, with data output organised using pandas and saved as a csv file. Also a tabular dashboard was built to visualize the data using html.
+This development automates 24hrs interval scraping of Broadway show data from [IBDB.com](https://www.ibdb.com/shows), deduplicates entries, and logs each run. It uses Selenium + BeautifulSoup and schedules itself to re-run every 24 hours via Python’s `schedule` library, with data output organised using pandas and saved as a csv file. Also a dashboard was built to visualize the data using html.
 
 ---
 
