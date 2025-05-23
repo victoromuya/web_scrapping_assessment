@@ -24,38 +24,3 @@ if __name__ == "__main__":
     while True:
         schedule.run_pending()
         time.sleep(60)
-
-
-# import schedule
-# import time
-# import os
-# from main import scrape_ibdb_shows, save_to_csv
-# from utils import init_driver
-
-
-
-# def run_scraper():
-#     print("🕒 Running scheduled scraper...")
-#     try:
-#         show_data = scrape_ibdb_shows(driver)
-#         if show_data:
-#             save_to_csv(show_data)
-#         else:
-#             print("⚠️ No shows were scraped.")
-#     except Exception as e:
-#         print(f"❌ Error during scheduled run: {e}")
-
-# # Schedule to run every 10 minutes
-# schedule.every(10).minutes.do(run_scraper)
-
-# if __name__ == "__main__":
-#     print("✅ Scheduler started. Running every 10 minutes.")
-#     run_scraper()  # Optionally run immediately once
-#     try:
-#         while True:
-#             schedule.run_pending()
-#             time.sleep(1)
-#     except KeyboardInterrupt:
-#         print("🛑 Scheduler stopped.")
-#         driver.quit()
-

@@ -40,7 +40,7 @@ def extract_show_details(driver, url):
             EC.presence_of_element_located((By.CLASS_NAME, "title-label"))
         )
     except:
-        print(f"❌ Timeout loading: {url}")
+        print(f"Timeout loading: {url}")
         return {
             "Title": "N/A",
             "Date": "N/A",
@@ -115,12 +115,12 @@ def scrape_ibdb_shows(driver, limit=None):
 
     new_records = []
     for idx, (link, text) in enumerate(show_links):
-        print(f"🔎 Scraping {idx + 1}/{len(show_links)}: {text}")
+        print(f"Scraping {idx + 1}/{len(show_links)}: {text}")
         try:
             details = extract_show_details(driver, link)
             new_records.append(details)
         except Exception as e:
-            print(f"❌ Error scraping {link}: {e}")
+            print(f"Error scraping {link}: {e}")
             continue
 
     driver.quit()
@@ -139,7 +139,7 @@ def scrape_ibdb_shows(driver, limit=None):
 
     os.makedirs(os.path.dirname(MASTER_CSV), exist_ok=True)
     result_df.to_csv(MASTER_CSV, index=False)
-    print(f"✅ Saved master CSV with {len(result_df)} total shows (added {added_count} this run).")
+    print(f"Saved master CSV with {len(result_df)} total shows (added {added_count} this run).")
 
     # Determine actually new records
     if os.path.exists(MASTER_CSV) and added_count > 0 and 'old_df' in locals():
